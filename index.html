@@ -10,11 +10,57 @@
 
 <body>
     <script>
-        const size = 6;
-        for (let i = 0; i <= size; i = i + 1) {
-            let str = " ".repeat(i);
-            str += i.toString().repeat((size - i) * 2 + 1);
-            console.log(str);
+        // let id_tab = setInterval(tab_aff, 500);
+        // let ico = 0;
+
+        // function tab_aff() {
+        //     let line = -1;
+        //     let aff = "";
+        //     while (++line < 10) {
+        //         if (line == Math.round(ico / 10 - 0.5)) {
+        //             if (line == 0) {
+        //                 aff += "0".repeat(ico % 10) + "a" + "0".repeat(9 - (ico % 10)) + "\n";
+        //             } else {
+        //                 aff += "0".repeat(ico % 10) + line.toString() + "0".repeat(9 - (ico % 10)) + "\n";
+        //             }
+        //         } else {
+        //             aff += "0000000000\n";
+        //         }
+        //     }
+        //     console.clear();
+        //     console.log(aff);
+        //     ++ico;
+        //     if (ico == 100) {
+        //         ico = 0;
+        //     }
+        // }
+        setInterval(tab, 500); // permet d'appeler la boucle toute les 500 Mili Seconde
+        let position_x = 0;
+        let position_y = 0;
+
+        function tab() {
+            let tab_aff = "";
+            for (let y = 0; y < 10; y++) {
+                for (let x = 0; x < 10; x++) {
+                    if (position_x == x && position_y == y) {
+                        tab_aff += "1";
+                    } else {
+                        tab_aff += "0";
+                    }
+                }
+                tab_aff += "\n"; // ajoute un retour a la ligne
+            }
+            console.clear();
+            console.log("EXO 2.5")
+            console.log(tab_aff);
+            position_x = position_x + 1;
+            if (position_x >= 10) {
+                position_x = 0; // on renitialise la position en x quand la ligne
+                position_y = position_y + 1;
+            }
+            if (position_y >= 10) {
+                position_y = 0; // on renitialise la position
+            }
         }
     </script>
 </body>
