@@ -10,16 +10,33 @@
 
 <body>
     <script>
-        // hello is a string
-        let hello = "Hello World!";
-        console.log(hello);
+        setInterval(tab, 500); // permet d'appeler la function toute les 500 Mili Seconde
+        let position_x = 0;
+        let position_y = 0;
 
-        const size = 10;
-        for (let i = 0; i < size; i = i + 1) {
-            // i is a number
-            let str = " ".repeat(size - i);
-            str += i.toString().repeat(i * 2 + 1);
-            console.log(str);
+        function tab() {
+            let tab_aff = "";
+            for (let y = 0; y < 10; y++) {
+                for (let x = 0; x < 10; x++) {
+                    if (position_x == x && position_y == y) {
+                        tab_aff += "1";
+                    } else {
+                        tab_aff += "0";
+                    }
+                }
+                tab_aff += "\n"; // ajoute un retour a la ligne
+            }
+            console.clear();
+            console.log("EXO 2.5")
+            console.log(tab_aff);
+            position_x = position_x + 1;
+            if (position_x >= 10) {
+                position_x = 0; // on renitialise la position en x quand la ligne
+                position_y = position_y + 1;
+            }
+            if (position_y >= 10) {
+                position_y = 0; // on renitialise la position
+            }
         }
     </script>
 </body>
