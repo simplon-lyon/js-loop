@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example JS</title>
+</head>
+
+<body>
+    <script>
+        // hello is a string
+        let hello = "Hello World!";
+        console.log(hello);
+
+        const size = 10;
+        for (let i = 0; i < size; i = i + 1) {
+            // i is a number
+            let str = " ".repeat(size - i);
+            str += i.toString().repeat(i * 2 + 1);
+            console.log(str);
+        }
+    </script>
+</body>
+
+</html>
