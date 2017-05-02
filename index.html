@@ -13,15 +13,23 @@
         // hello is a string
         let hello = "Hello World!";
         console.log(hello);
-
         const size = 10;
-        let a=9;
         for (let i = 0; i < size; i = i + 1) {
             // i is a number
-            let str = " ".repeat(i);
-            str += i.toString().repeat(a*2+1);
-            a=a-1;
+            let str = " ".repeat(size - i);
+            str += i.toString().repeat(i * 2 + 1);
             console.log(str);
+        }
+
+
+        const num = 10;
+        let b = 9;
+        for (let i = 0; i < num; i = i + 1) {
+            // i is a number
+            let string = " ".repeat(i + 1);
+            string += i.toString().repeat(b * 2 + 1);
+            b = b - 1;
+            console.log(string);
         }
     </script>
 </body>
